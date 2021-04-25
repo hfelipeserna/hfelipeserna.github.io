@@ -1,0 +1,13 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes*/
+
+/*  Estilos aplicados de manera gnérica a
+    todo el documento HTML*/
+
+    *{
+        box-sizing: border-box;
+        font-family: 'Roboto',sans-serif;
+        padding: 0px;
+    }

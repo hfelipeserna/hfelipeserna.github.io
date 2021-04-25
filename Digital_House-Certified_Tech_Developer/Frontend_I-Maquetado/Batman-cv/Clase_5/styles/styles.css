@@ -1,0 +1,97 @@
+/* Elaborado por: Hernán Felipe Serna Gómez
+   Curso: Font-end I
+   Digital House*/
+
+/*Selectores de etiqueta*/
+
+a:link, a:visited{
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+}
+
+main{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+}
+
+footer{
+    background-color: #1F497D;
+    color: #FFFFFF;
+    height: 40px;
+    font-family: 'Calibri', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+header{
+    background-color:#dddddd;
+    margin: auto;
+    text-align: center;
+}
+
+h1,h2{
+    background-color: #BFBFBF;
+    font-family: serif;
+    text-transform: uppercase;
+    letter-spacing: 8px; 
+}
+
+h1{
+    color: #1F477F;
+    font-size: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    word-spacing: 20px;
+}
+
+h2{
+    color: #692425;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+ul,dl{
+    line-height: 18px;
+}
+
+/*Selectores de id*/
+
+#line-text-icon{
+    vertical-align: middle;
+}
+
+#LinkedinIco{
+    height: 15px;
+}
+
+#InstagramIco{
+    height: 15px;
+}
+
+/*Selectores de clase*/
+
+.texto-italic{
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.text-type-1{
+    font-family: Helvetica, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.text-type-2{
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+}

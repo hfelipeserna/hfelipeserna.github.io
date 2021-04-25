@@ -1,0 +1,43 @@
+/* Elaborado por: Hernán Felipe Serna Gómez
+   Curso: Font-end I
+   Digital House*/
+
+/*Selectores de clase*/
+
+.enlaces{
+    text-decoration: none;
+    color: black; 
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 0;
+}
+
+.imagen-fondo{
+    padding-top: 0px;
+    color: white;
+    background-attachment: scroll;
+    background-image: url('../img/lemon-pie.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 0px;
+    background-position-y: -300px;
+}
+
+.capa-degradado{
+    min-height: 20%;
+    /*background-color:rgba(0,0,0,0.2);*/
+    background: linear-gradient(180deg,rgba(170, 170, 170, 0),rgba(56, 54, 54, 0.6));
+}
+
+.titulo-encabezado{
+    padding-top: 25%;
+}
+
+/*Selectores de etiqueta*/
+
+nav ul{
+    padding-left: 0px;
+}
+
+ul{
+    list-style-type: none;
+}

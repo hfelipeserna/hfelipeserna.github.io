@@ -1,0 +1,18 @@
+/*  Desarrollado por: Hernán Felipe Serna Gómez
+    Certified Tech Developer - Digital House 2021  */
+
+#DigitalHouseLogo{
+    background-image: url('../img/DigitalHouse.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 300px;
+}
+
+li{
+    padding: 5px;
+}
+
+.link-folder{
+    text-decoration: none;
+}
