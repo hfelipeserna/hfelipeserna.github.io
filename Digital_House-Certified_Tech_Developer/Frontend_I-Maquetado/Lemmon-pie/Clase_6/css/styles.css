@@ -11,6 +11,10 @@
     padding-left: 0;
 }
 
+.fas{
+    color: rgb(87, 85, 85);
+}
+
 .imagen-fondo{
     padding-top: 0px;
     color: white;
@@ -33,6 +37,20 @@
 }
 
 /*Selectores de etiqueta*/
+
+body{
+    margin: 0px;
+    margin-top: 8px;
+    font-family: "Lato";
+}
+
+header{
+    padding-left: 8px;
+}
+
+nav{
+    padding-bottom: 20px;
+}
 
 nav ul{
     padding-left: 0px;
