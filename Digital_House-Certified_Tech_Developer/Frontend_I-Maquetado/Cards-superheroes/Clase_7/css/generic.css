@@ -3,11 +3,27 @@
     Digital House
     Cards Superheroes*/
 
-/*  Estilos aplicados de manera gnérica a
-    todo el documento HTML*/
+/*  Estilos aplicados de manera gnérica a todo
+    el documento HTML y variables de estilo*/
+
+    :root{
+        --color-blanco:#FFFFFF;
+        --color-rojo:#CC2424;
+        --color-azul:#00669F;
+        --color-negro:#000000;
+        --color-verde:#1CD1B0;
+        --color-gris-palido:#F3F3F3;
+        --color-fondo:#E5E5E5;
+        --color-gris-oscuro:#616060;
+        --tipografia:'Roboto',sans-serif;
+    }
 
     *{
         box-sizing: border-box;
-        font-family: 'Roboto',sans-serif;
+        font-family: var(--tipografia);
+        font-weight: 400;
         padding: 0px;
+        margin: 0px;
     }
+
+    
