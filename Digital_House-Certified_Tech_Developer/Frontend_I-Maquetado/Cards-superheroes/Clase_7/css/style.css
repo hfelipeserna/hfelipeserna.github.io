@@ -7,53 +7,53 @@
 
 .bg-Batman {
   background-image: url("../img/bg-batman.jpg");
-  background-position-y: 47%;
   background-position-x: 74%;
+  background-position-y: 47%;
 }
 
 .bg-Superman {
   background-image: url("../img/bg-superman.jpg");
-  background-position-y: 22%;
   background-position-x: 30%;
+  background-position-y: 22%;
 }
 
 .bg-WonderWoman {
   background-image: url("../img/bg-wonderw.jpg");
-  background-position-y: 22%;
   background-position-x: 30%;
+  background-position-y: 22%;
 }
 
 .button {
   background-color: var(--color-azul);
   border-radius: 7px;
+  bottom: 18px;
   color: var(--color-gris-palido);
+  font-size: 15px;
+  margin: 18px 85px;
+  padding: 15px 36px;
+  position: absolute;
+  right: 4px;
   text-decoration: none;
   text-align: center;
   width: 128px;
-  position: absolute;
-  padding: 15px 36px;
-  font-size: 15px;
-  bottom: 18px;
-  right: 4px;
-  margin: 18px 85px;
 }
 
 .card {
   background-repeat: no-repeat;
   border-radius: 25px 25px 0 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  min-width: 300px;
-  max-width: 300px;
   margin: 5% 35% 5%;
+  max-width: 300px;
+  min-width: 300px;
   position: relative;
 }
 
 .card-bg {
   background-color: var(--color-gris-oscuro);
   background-repeat: no-repeat;
+  background-size: 180%;
   border-radius: 25px 25px 0 0;
   height: 191px;
-  background-size: 180%;
 }
 
 .card-description {
@@ -64,16 +64,16 @@
 }
 
 .card-text {
-  padding: 13px;
   font-size: 16px;
+  padding: 13px;
   text-align: justify;
 }
 
 .corazon {
   color: var(--color-rojo);
-  position: absolute;
   font-size: 24px;
   left: 7%;
+  position: absolute;
   top: 3%;
 }
 
@@ -81,18 +81,18 @@
   border-radius: 100%;
   height: 120px;
   left: 86px;
-  top: 109px;
   position: absolute;
+  top: 109px;
   width: 120px;
   z-index: 1;
 }
 
 footer {
-  width: 100%;
+  background: var(--color-azul);
+  color: var(--color-blanco);
   margin-top: 80px;
   padding: 25px;
-  color: var(--color-blanco);
-  background: var(--color-azul);
+  width: 100%;
 }
 
 footer p {
@@ -107,13 +107,14 @@ h1 {
 }
 
 h2 {
-  text-transform: uppercase;
   font-size: 30px;
   padding-top: 50px;
+  text-transform: uppercase;
 }
 
 header {
   background-color: var(--color-azul);
+  box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
   color: var(--color-blanco);
   display: block;
   padding: 15px;
@@ -121,20 +122,19 @@ header {
   position: sticky;
   top: 0px;
   width: 100%;
-  box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 
 .plus-button {
-  border-radius: 100%;
-  font-size: 30px;
-  bottom: 40%;
   background-color: var(--color-azul);
+  border-radius: 100%;
+  bottom: 40%;
   color: var(--color-blanco);
+  font-size: 30px;
+  padding: 16px;
   position: fixed;
   right: 3%;
   text-decoration: none;
-  padding: 16px;
   z-index: 999;
 }
 
