@@ -1,0 +1,38 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes (clase 9)*/
+
+/*  Estilos aplicados al header del proyecto*/
+
+.discount-bar{
+    background-color: var(--color-verde);
+    color: var(--color-negro);
+    font-size: 15px;
+    padding: 3px 20px 0px;
+}
+
+.title-bar{
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.logo-tienda{
+    padding: 6px 0px 3px 10px;
+}
+
+h1{
+    display: inline-block;
+}
+
+nav{
+    text-align: right;
+}
+
+li{
+    display: inline-block;
+}
+
+header{
+    position: sticky;
+}

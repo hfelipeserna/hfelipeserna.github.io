@@ -3,11 +3,13 @@
     Digital House
     Cards Superheroes (clase 9)*/
 
-/*  Estilos aplicados de manera gnérica a todo
+/*  Estilos aplicados de manera genérica a todo
     el documento HTML y variables de estilo*/
 
+/*Fuentes de tipografía: Karla (400,700), Roboto (400) e Inter (700)*/
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 :root {
   --color-blanco: #ffffff;
@@ -18,12 +20,13 @@
   --color-gris-palido: #f3f3f3;
   --color-fondo: #e5e5e5;
   --color-gris-oscuro: #616060;
-  --tipografia: "Roboto", sans-serif;
+  --tipografia-Roboto: "Roboto", sans-serif;
+  --tipografia-Karla: "Karla", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: var(--tipografia);
+  font-family: var(--tipografia-Roboto);
   font-weight: 400;
   padding: 0px;
   margin: 0px;
