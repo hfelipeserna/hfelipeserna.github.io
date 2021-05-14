@@ -3,8 +3,74 @@
     Digital House
     Cards Superheroes (clase 9)*/
 
+@import url("./generic.css");
+@import url("./header-tienda.css");
+@import url("./footer.css");
+@import url("./cards.css");
 
-@import url('./generic.css');
-@import url('./header-tienda.css');
-@import url('./footer.css');
-@import url('./cards.css');
+.bg-Batman{
+  background-image: url("../img/bg-Batman.jpg");
+  background-size: cover;
+}
+
+.bg-WonderWoman{
+  background-image: url("../img/bg-WonderWoman.jpg");
+  background-size: cover;
+}
+
+.bg-Superman{
+  background-image: url("../img/bg-Superman.jpg");
+  background-size: cover;
+  
+}
+
+.bg-HarleyQuinn{
+  background-image: url("../img/bg-HarleyQuinn.png");
+  background-size: cover;
+}
+
+.cards-container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.plus-button {
+  background-color: var(--color-azul-rey);
+  border-radius: 100%;
+  bottom: 46%;
+  color: var(--color-blanco);
+  padding: 25px;
+  position: fixed;
+  right: 79px;
+  z-index: 3;
+}
+
+.plus-button:before{
+    content: "\f067";
+    font-size: 30px;
+  }
+
+.scroll-row {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  margin: 140px 180px 164px;
+  gap:60px;
+}
+
+.scroll-row::-webkit-scrollbar {
+  width: 15px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: var(--color-gris-oscuro);
+  border-radius: 10px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+  background-color: var(--color-gris-palido);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}

@@ -7,12 +7,14 @@
     el documento HTML y variables de estilo*/
 
 /*Fuentes de tipografía: Karla (400,700), Roboto (400) e Inter (700)*/
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+/*Iconos de Font-Awesome*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 :root {
-  --color-azul-oscuro: #001D2D;
+  --color-azul-oscuro: #001d2d;
   --color-azul-rey: #00669f;
   --color-blanco: #ffffff;
   --color-fondo: #e5e5e5;

@@ -6,13 +6,13 @@
 /*  Estilos aplicados al footer del proyecto*/
 
 footer {
-    background: var(--color-azul-rey);
-    color: var(--color-blanco);
-    padding-top: 21px;
-    padding-bottom: 21px;
-  }
-  
-  footer p {
-    font-size: 16px;
-    text-align: center;
-  }
+  background: var(--color-azul-rey);
+  color: var(--color-blanco);
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+footer p {
+  font-size: 16px;
+  text-align: center;
+}

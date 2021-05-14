@@ -5,55 +5,61 @@
 
 /*  Estilos aplicados al header del proyecto*/
 
-.discount-bar{
-    background-color: var(--color-verde);
-    color: var(--color-negro);
-    font-size: 15px;
-    padding: 3px 20px 0px;
+.discount-bar {
+  background-color: var(--color-verde);
+  color: var(--color-negro);
+  font-size: 15px;
+  padding: 3px 20px 0px;
 }
 
-.header-main{
-    position: sticky;
-    top: 0px;
+.header-main {
+  position: sticky;
+  top: 0px;
+  z-index: 99;
 }
 
-.img-logo-tienda{
-    width: 99px;
-    height: 70px;
+.img-logo-tienda {
+  width: 99px;
+  height: 70px;
 }
 
-.logo-tienda{
-    position: relative;
-    display: inline-block;
-    margin: 6px 10px 0px;
+.logo-tienda {
+  position: relative;
+  display: inline-block;
+  margin: 6px 10px 0px;
 }
 
-.nav-bar{
-    text-align: right;
-    background-color: var(--color-azul-oscuro);
-    color: var(--color-blanco);
-    vertical-align: middle;
-    font-size: 16px;
-    padding-top: 11px;
-    padding-bottom: 10px;
+.nav-bar {
+  text-align: right;
+  background-color: var(--color-azul-oscuro);
+  vertical-align: middle;
+  font-size: 16px;
+  padding-top: 11px;
+  padding-bottom: 10px;
 }
 
-.nav-bar>ul>li{
-    display: inline-block;
-    padding-right: 20px;
+.nav-bar > ul > li {
+  display: inline-block;
+  padding-right: 20px;
 }
 
-.title-bar{
-    background-color: var(--color-azul-rey);
-    color: var(--color-blanco);
+.site-links{
+  color: var(--color-blanco);
+  text-decoration: none;
 }
 
-.title-bar>h1{
-    display: inline-block;
-    font-size: 30px;
-    margin-left: 10px;
+.title-bar {
+  background-color: var(--color-azul-rey);
+  color: var(--color-blanco);
 }
 
-.title-bar h1, .img-logo-tienda{
-    vertical-align: middle;
+.title-bar > h1 {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.title-bar h1,
+.img-logo-tienda {
+  vertical-align: middle;
 }
