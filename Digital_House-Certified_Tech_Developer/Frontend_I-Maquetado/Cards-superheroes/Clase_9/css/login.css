@@ -1,0 +1,33 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes (clase 9)*/
+
+/*  Estilos aplicados al login*/
+
+#login-form {
+  max-width: 620px;
+  font-family: 'Karla';
+}
+
+.login-access-form > input {
+  width: 100%;
+  margin: 20px 0px;
+  border: 1.5px solid;
+}
+
+.login-access-form > input[type="submit"]:hover {
+  background-color: var(--color-gris-oscuro);
+}
+
+.login-access-form > input::placeholder {
+    font-weight: 400;
+    margin:16.53px 26.93px 17.47px;
+  }
+
+.login-access-form >input[type="submit"]{
+  background-color: var(--color-verde);
+  border: none;
+  font-weight: 700;
+  border-radius: 23px;
+}
