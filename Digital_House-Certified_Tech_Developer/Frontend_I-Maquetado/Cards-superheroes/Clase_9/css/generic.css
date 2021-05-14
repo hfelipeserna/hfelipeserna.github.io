@@ -12,22 +12,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 :root {
+  --color-azul-oscuro: #001D2D;
+  --color-azul-rey: #00669f;
   --color-blanco: #ffffff;
-  --color-rojo: #cc2424;
-  --color-azul: #00669f;
-  --color-negro: #000000;
-  --color-verde: #1cd1b0;
-  --color-gris-palido: #f3f3f3;
   --color-fondo: #e5e5e5;
   --color-gris-oscuro: #616060;
-  --tipografia-Roboto: "Roboto", sans-serif;
+  --color-gris-palido: #f3f3f3;
+  --color-negro: #000000;
+  --color-rojo: #cc2424;
+  --color-verde: #1cd1b0;
   --tipografia-Karla: "Karla", sans-serif;
+  --tipografia-Roboto: "Roboto", sans-serif;
 }
 
 * {
   box-sizing: border-box;
   font-family: var(--tipografia-Roboto);
   font-weight: 400;
-  padding: 0px;
   margin: 0px;
+  padding: 0px;
 }

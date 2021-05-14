@@ -1,0 +1,18 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes (clase 9)*/
+
+/*  Estilos aplicados al footer del proyecto*/
+
+footer {
+    background: var(--color-azul-rey);
+    color: var(--color-blanco);
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  
+  footer p {
+    font-size: 16px;
+    text-align: center;
+  }

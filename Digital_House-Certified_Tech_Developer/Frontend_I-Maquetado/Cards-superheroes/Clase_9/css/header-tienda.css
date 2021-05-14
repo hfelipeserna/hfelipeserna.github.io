@@ -12,27 +12,48 @@
     padding: 3px 20px 0px;
 }
 
-.title-bar{
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
+.header-main{
+    position: sticky;
+    top: 0px;
+}
+
+.img-logo-tienda{
+    width: 99px;
+    height: 70px;
 }
 
 .logo-tienda{
-    padding: 6px 0px 3px 10px;
-}
-
-h1{
+    position: relative;
     display: inline-block;
+    margin: 6px 10px 0px;
 }
 
-nav{
+.nav-bar{
     text-align: right;
+    background-color: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+    vertical-align: middle;
+    font-size: 16px;
+    padding-top: 11px;
+    padding-bottom: 10px;
 }
 
-li{
+.nav-bar>ul>li{
     display: inline-block;
+    padding-right: 20px;
 }
 
-header{
-    position: sticky;
+.title-bar{
+    background-color: var(--color-azul-rey);
+    color: var(--color-blanco);
+}
+
+.title-bar>h1{
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.title-bar h1, .img-logo-tienda{
+    vertical-align: middle;
 }

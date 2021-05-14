@@ -3,8 +3,9 @@
     Digital House
     Cards Superheroes (clase 9)*/
 
+/*  Estilos aplicados a los elementos tipo cards del proyecto*/
 
-@import url('./generic.css');
-@import url('./header-tienda.css');
-@import url('./footer.css');
-@import url('./cards.css');
+.face-img{
+    border-radius: 100%;
+    width: 120px;
+}
