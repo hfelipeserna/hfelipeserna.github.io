@@ -21,6 +21,7 @@
   --color-gris-oscuro: #616060;
   --color-gris-palido: #f3f3f3;
   --color-negro: #000000;
+  --color-negro-mate: #333333;
   --color-rojo: #cc2424;
   --color-verde: #1cd1b0;
   --tipografia-Karla: "Karla", sans-serif;
@@ -33,4 +34,10 @@
   font-weight: 400;
   margin: 0px;
   padding: 0px;
+}
+
+body {
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
 }
