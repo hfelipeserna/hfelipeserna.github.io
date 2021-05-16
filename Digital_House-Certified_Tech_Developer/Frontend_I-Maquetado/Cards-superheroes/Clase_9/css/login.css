@@ -5,29 +5,28 @@
 
 /*  Estilos aplicados al login*/
 
-body{
-  justify-content:space-between;
-}
-
 #login-form {
   display: flex;
   flex-direction: column;
-  margin: 21% 26%;
+  margin: 9% 26%;
+  min-width: 320px;
   max-width: 620px;
-  font-family: "Karla";
+  font-family: "Karla",sans-serif;
 }
 
 #login-form > h2 {
-  font-family: "Inter";
+  font-family: "Inter",sans-serif;
   font-size: 53px;
+  margin-bottom: 55px;
   color: var(--color-negro-mate);
 }
 
 #login-form > form > input {
   width: 100%;
-  margin: 20px 0px;
+  margin-bottom: 20px;
   border: 1.5px solid;
   padding: 17px 0px 17px 20.92px;
+  font-size: 20px;
 }
 
 #login-form > form > input[type="submit"]:hover {
@@ -37,13 +36,32 @@ body{
 
 #login-form > form > input::placeholder {
   font-weight: 400;
-  font-size: 20px;
   margin: 16.53px 26.93px 17.47px;
+  color: var(--color-negro);
+}
+
+#login-form > form > input:focus {
+  background-color: var(--color-gris-palido);
 }
 
 #login-form > form > input[type="submit"] {
   background-color: var(--color-verde);
+  height: 53px;
   border: none;
   font-weight: 700;
   border-radius: 23px;
+  font-family: 'Karla', sans-serif;
+  line-height: 44px;
+  font-size: 24px;
+  padding: 5px 0px;
+  margin-top: 39px;
+}
+
+#login-form >p{
+  text-align: center;
+}
+
+#login-form >p >a{
+  color: var(--color-azul-rey);
+  text-decoration: none;
 }

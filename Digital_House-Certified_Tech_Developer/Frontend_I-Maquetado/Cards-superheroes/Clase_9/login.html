@@ -12,6 +12,7 @@
     <title>Cards Superheros</title>
     <!-- Estilos propios-->
     <link href="./css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="./img/dc-comics.png" />
   </head>
 
   <body>
@@ -33,15 +34,24 @@
       </div>
     </header>
 
-    <main class="login-form">
+    <div class="space-up"></div>
+
+    <main id="login-form">
       <h2>Login</h2>
-      <form action="" method="POST">
-        <input type="text" name="user" placeholder="Usuario" />
-        <input type="password" name="password" placeholder="Contraseña" />
+      <form action method="POST">
+        <input type="text" name="user" required placeholder="Usuario" />
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Contraseña"
+        />
         <input type="submit" value="Entrar" />
       </form>
-      <p>¿No tienes una cuenta? <span>Registrarme</span></p>
+      <p>¿No tienes una cuenta? <a href="./register.html">Registrarme</a></p>
     </main>
+
+    <div class="space-buttom"></div>
 
     <footer>
       <p>Todos los derechos reservados a FRONTEND 1</p>
