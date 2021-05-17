@@ -5,29 +5,55 @@
 
 /*  Estilos aplicados al registro*/
 
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20.21px;
+  margin-top: 30px;
+}
+
+.btn-container > input {
+  border: none;
+  border-radius: 23px;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  height: 53px;
+  line-height: 44px;
+  padding: 5px 0px;
+  width: 48.39%;
+}
+
+.btn-container > input[type="reset"] {
+  background-color: var(--color-gris-frio);
+}
+
+.btn-container > input[type="submit"] {
+  background-color: var(--color-verde);
+}
+
+.btn-container > input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+}
+
 #register-form {
   display: flex;
   flex-direction: column;
-  margin: 9% 26%;
-  min-width: 320px;
-  max-width: 620px;
   font-family: "Karla", sans-serif;
+  margin: 9% 26%;
+  max-width: 620px;
+  min-width: 320px;
 }
 
 #register-form > form > input,
 select {
-  width: 100%;
-  margin-bottom: 20px;
   border: 1.5px solid;
-  padding: 16.53px 0px 17.47px 10px;
   font-size: 20px;
-}
-
-#register-form > h2 {
-  font-family: "Inter", sans-serif;
-  font-size: 53px;
-  margin-bottom: 55px;
-  color: var(--color-negro-mate);
+  margin-bottom: 20px;
+  padding: 16.53px 0px 17.47px 10px;
+  width: 100%;
 }
 
 #register-form > form > input:focus,
@@ -35,8 +61,24 @@ select:focus {
   background-color: var(--color-gris-palido);
 }
 
-#register-form > form > input::placeholder, select::placeholder {
+#register-form > form > input::placeholder {
   color: var(--color-negro);
   font-weight: 400;
   margin: 16.53px 26.93px 17.47px;
+}
+
+#register-form > h2 {
+  color: var(--color-negro-mate);
+  font-family: "Inter", sans-serif;
+  font-size: 53px;
+  margin-bottom: 50px;
+}
+
+#register-form > p {
+  text-align: center;
+}
+
+#register-form > p > a {
+  color: var(--color-azul-rey);
+  text-decoration: none;
 }
