@@ -8,40 +8,28 @@
 #login-form {
   display: flex;
   flex-direction: column;
-  margin: 9% 26%;
-  min-width: 320px;
-  max-width: 620px;
   font-family: "Karla",sans-serif;
-}
-
-#login-form > h2 {
-  font-family: "Inter",sans-serif;
-  font-size: 53px;
-  margin-bottom: 55px;
-  color: var(--color-negro-mate);
+  margin: 9% 26%;
+  max-width: 620px;
+  min-width: 320px;
 }
 
 #login-form > form > input {
-  width: 100%;
-  margin-bottom: 20px;
   border: 1.5px solid;
-  padding: 17px 0px 17px 20.92px;
   font-size: 20px;
-}
-
-#login-form > form > input[type="submit"]:hover {
-  background-color: var(--color-azul-oscuro);
-  color: var(--color-blanco);
-}
-
-#login-form > form > input::placeholder {
-  font-weight: 400;
-  margin: 16.53px 26.93px 17.47px;
-  color: var(--color-negro);
+  margin-bottom: 20px;
+  padding: 17px 0px 17px 20.92px;
+  width: 100%;
 }
 
 #login-form > form > input:focus {
   background-color: var(--color-gris-palido);
+}
+
+#login-form > form > input::placeholder {
+  color: var(--color-negro);
+  font-weight: 400;
+  margin: 16.53px 26.93px 17.47px;
 }
 
 #login-form > form > input[type="submit"] {
@@ -55,6 +43,18 @@
   font-size: 24px;
   padding: 5px 0px;
   margin-top: 39px;
+}
+
+#login-form > form > input[type="submit"]:hover {
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+}
+
+#login-form > h2 {
+  font-family: "Inter",sans-serif;
+  font-size: 53px;
+  margin-bottom: 55px;
+  color: var(--color-negro-mate);
 }
 
 #login-form >p{

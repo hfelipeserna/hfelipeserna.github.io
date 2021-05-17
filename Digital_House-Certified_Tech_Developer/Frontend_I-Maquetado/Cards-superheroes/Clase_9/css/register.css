@@ -1,0 +1,42 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes (clase 9)*/
+
+/*  Estilos aplicados al registro*/
+
+#register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 9% 26%;
+  min-width: 320px;
+  max-width: 620px;
+  font-family: "Karla", sans-serif;
+}
+
+#register-form > form > input,
+select {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1.5px solid;
+  padding: 16.53px 0px 17.47px 10px;
+  font-size: 20px;
+}
+
+#register-form > h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 53px;
+  margin-bottom: 55px;
+  color: var(--color-negro-mate);
+}
+
+#register-form > form > input:focus,
+select:focus {
+  background-color: var(--color-gris-palido);
+}
+
+#register-form > form > input::placeholder, select::placeholder {
+  color: var(--color-negro);
+  font-weight: 400;
+  margin: 16.53px 26.93px 17.47px;
+}

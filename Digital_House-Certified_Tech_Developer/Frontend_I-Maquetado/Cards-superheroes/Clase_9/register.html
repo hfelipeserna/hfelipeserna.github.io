@@ -34,10 +34,30 @@
       </div>
     </header>
 
-    <main>
-          <form action="">
-                
-          </form>
+    <main id="register-form">
+      <h2>Registro</h2>
+      <form action method="POST">
+        <input type="text" name="name-filename" required placeholder="Nombre y apellido" />
+        <input type="email" name="email" required placeholder="Correo electrónico" />
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Contraseña"
+        />
+        <select name="pais" id="country">
+          <option value selected hidden>País</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Colombia">Colombia</option>
+        </select>
+        <div class="btn-container">
+          <input type="reset" value="Resetear" />
+          <input type="submit" value="Registrar" />
+        </div>
+        
+      </form>
+      <p>¿Ya tenés una cuenta? <a href="./register.html">Ingresá</a></p>
     </main>
 
     <footer>
