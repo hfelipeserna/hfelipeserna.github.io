@@ -1,0 +1,47 @@
+/*  Elaborado por: Hernán Felipe Serna Gómez
+    Curso: Font-end I
+    Digital House
+    Cards Superheroes (clase 9)*/
+
+/*  Estilos aplicados al formulario de contacto*/
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Karla", sans-serif;
+  margin: 9% 26%;
+  max-width: 620px;
+  min-width: 320px;
+}
+
+#contact-form > form > input {
+  font-size: 20px;
+}
+
+#contact-form > form > input,
+textarea {
+  border: 1.5px solid;
+  margin-bottom: 20px;
+  padding: 16.53px 0px 17.47px 10px;
+  width: 100%;
+}
+
+#contact-form > form > input::placeholder {
+  color: var(--color-negro);
+  font-weight: 400;
+  margin: 16.53px 26.93px 17.47px;
+}
+
+#contact-form > form > textarea {
+  font-size: 16px;
+  padding: 22px 37px 38px 28px;
+  max-height: 251px;
+  min-height: 200px;
+}
+
+#contact-form > h2 {
+  color: var(--color-negro-mate);
+  font-family: "Inter", sans-serif;
+  font-size: 53px;
+  margin-bottom: 50px;
+}

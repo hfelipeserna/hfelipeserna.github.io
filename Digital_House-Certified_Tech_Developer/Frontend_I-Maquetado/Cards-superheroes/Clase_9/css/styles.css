@@ -9,6 +9,7 @@
 @import url("./cards.css");
 @import url("./login.css");
 @import url("./register.css");
+@import url("./contact.css");
 
 .bg-Batman{
   background-image: url("../img/bg-Batman.jpg");
