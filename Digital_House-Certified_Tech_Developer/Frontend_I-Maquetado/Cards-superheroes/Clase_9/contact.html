@@ -12,7 +12,7 @@
     <title>Cards Superheros</title>
     <!-- Estilos propios-->
     <link href="./css/styles.css" rel="stylesheet" />
-    <link rel="icon" href="./img/dc-comics.png">
+    <link rel="icon" href="./img/dc-comics.png" />
   </head>
 
   <body>
@@ -34,7 +34,28 @@
       </div>
     </header>
 
-    <main></main>
+    <main id="contact-form">
+      <h2>Contacto</h2>
+      <form action method="POST">
+        <input
+          type="text"
+          name="name-filename"
+          required
+          placeholder="Nombre y apellido"
+        />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Correo electrónico"
+        />
+        <textarea name="message" id="message"></textarea>
+        <div class="btn-container">
+          <input type="reset" value="Resetear" />
+          <input type="submit" value="Registrar" />
+        </div>
+      </form>
+    </main>
 
     <footer>
       <p>Todos los derechos reservados a FRONTEND 1</p>
