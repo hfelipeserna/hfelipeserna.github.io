@@ -64,7 +64,7 @@ window.onload = () => {
 
 // class NombreClase {
 //   constructor(nombre) {
-//     this.propiedad = npmbre
+//     this.propiedad = nombre
 //   }
 
 // }
