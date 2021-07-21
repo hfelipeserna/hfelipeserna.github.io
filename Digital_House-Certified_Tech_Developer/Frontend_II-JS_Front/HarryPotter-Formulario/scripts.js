@@ -21,18 +21,38 @@ window.onload = () => {
     // const nombre = document.querySelector('#nombre').value;   -> Esta es una forma válida de pedir el valor
     // cnombre.onKeyDown = () => {};  -> Otra forma de agregar un evento
 
-    const datos = {
-        nombreCompleto: null,
-        contrasenia: null,
-        telefono: null,
-        hobbies:[],
-        nacionalidad: null,
-    };
+    const datos = new DatosInscripcion();
+    boton.disabled = true;
 
+    //eventListener del Nombre
     nombre.addEventListener("keyup",() => {
         datos.nombreCompleto = nombre.value.toLowerCase().trim();
+
+        if(datos.nombreCompleto.length>8){
+            console.log("Max. caracteres excedidos");
+        }
+
+        const partesNombre = datos.nombreCompleto.split(' ');
+        if(partesNombre.length>=2){
+            nombre.classList.add('error');
+            boton.disabled = false;
+        }
+        else{
+            nombre.classList.remove('error');
+            boton.disabled = true;
+        }
+
+        partesNombre.forEach(parte =>{
+            if(parte.length>=2){
+                nombre.classList.remove('error');
+            }
+            else{
+                nombre.classList.add('error');
+            }
+        })
     });
 
+    //eventListener de Contraseña
     contrasenia.addEventListener("keyup",() =>{
         datos.contrasenia = contrasenia.value.trim();
     });
@@ -51,6 +71,14 @@ window.onload = () => {
 
     formInscripcion.addEventListener("submit",(event) => {
         event.preventDefault();
+
+        /*  const ejemplo = [{prop:'checked'},{prop:'unchecked'},{prop:'checked'},]
+        
+            cons hobbiesSelected = ejemplo.filter(ej =>{
+                return ej.prop == 'checked'
+            })
+        */
+
         hobbies.forEach(hobbie => {
             if(hobbie.checked){
                 datos.hobbies.push(hobbie.value);
