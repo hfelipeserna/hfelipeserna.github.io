@@ -1,27 +1,53 @@
 @startuml
 'https://plantuml.com/class-diagram
+@startuml
+'___________STYLES___________
+title UML - Servicio de compra
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
 }
+
+'___________UML___________
+
+interface ICompraService{
++procesarCompra(productoId: String, cantidad: Integer, tarjeta: Tarjeta, dirección: Dirección, List<>)
+}
+
+class CompraService{
++procesarCompra(productoId: String, cantidad: Integer, tarjeta: Tarjeta, dirección: Dirección, List<>)
+}
+
+class AlmacenService{
++buscarProducto(productoId: String, cantidad: Integer): Producto
+}
+
+class PagoService{
++procesarPago(tarjeta: Tarjeta, montoACobrar: String): Boolean
+}
+
+class EnvíoService{
++procesarEnvío(p: Producto, dirección: Dirección)
+}
+
+ICompraService <|.. CompraService
+CompraService-->AlmacenService
+CompraService-->PagoService
+CompraService-->EnvíoService
 
 @enduml
