@@ -57,7 +57,7 @@ class PagoService{
 }
 
 class EnvíoService{
-+procesarEnvío(p: Producto, dirección: Dirección)
++procesarEnvío(p: List<Producto>, dirección: Dirección)
 }
 
 class Producto{
