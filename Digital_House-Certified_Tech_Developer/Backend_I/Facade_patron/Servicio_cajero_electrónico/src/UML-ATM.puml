@@ -39,62 +39,67 @@ interface IServiceATM{
 }
 
 class ServiceATM{
--autenticationService: AutenticationService
+-authenticationService: AuthenticationService
 -cuentaService: CuentaService
 -cajaService: CajaService
-+ServiceATM(autenticationService: AutenticationService, cuentaService: CuentaService, cajaService: CajaService)
++ServiceATM(authenticationService: AuthenticationService, cuentaService: CuentaService, cajaService: CajaService)
 +procesarRetiro(dni: String, contraseña: String, montoARetirar: Integer)
 }
 
-class AutenticationService{
-+validarUsuarioYContraseña(dni, contraseña): Boolean
+class AuthenticationService{
+-authenticationDatabases: List<AutenticationDatabase>
++AuthenticationService(authenticationDatabases: List<AuthenticationDatabase>)
++validarUsuarioYContraseña(dni: String, contraseña: String): Boolean
 }
 
 class CuentaService{
+-cuentas: List<Cuentas>
++CuentaService(cuentas: List<Cuentas>)
 +getCuenta(dni: String): Cuenta
 }
 
 class CajaService{
-+entregarDinero(c: Cuenta, Integer montoARetirar)
++entregarDinero(c: Cuenta, montoARetirar: integer)
 }
 
 class Cuenta{
 -dni: String
 -saldoActual: Integer
-+Cuenta(String dni, Integer saldoActual)
++Cuenta(dni: String, saldoActual: Integer)
 +getDNI(): String
-+setDNI()
 +getSaldoActual(): integer
 +setSaldoActual()
++toString()
 }
 
 class DineroATM{
 -dineroDisponible: Integer
--getDineroDisponible(): Integer
--setDineroDisponible()
--recargarDineroATM(dineroRecarga: Integer)
++getDineroDisponible(): Integer
++setDineroDisponible()
++recargarDineroATM(dineroRecarga: Integer)
++toString()
 }
 
 class AutenticationDatabase{
 -dni: String
 -contraseña: String
-+AutenticationService(dni: String, contraseña: String)
++AuthenticationService(dni: String, contraseña: String)
 +getDNI(): String
-+setDNI()
 +getContraseña(): String
 +setContraseña()
++toString()
 }
 
 object appCliente{
 }
 
 IServiceATM<|..ServiceATM
-ServiceATM --> AutenticationService
+ServiceATM --> AuthenticationService
 ServiceATM --> CuentaService
 ServiceATM --> CajaService
 appCliente.>IServiceATM
 CajaService..>DineroATM
 CuentaService..>Cuenta
-AutenticationService..>AutenticationDatabase
+AuthenticationService..>AutenticationDatabase
 
 @enduml
