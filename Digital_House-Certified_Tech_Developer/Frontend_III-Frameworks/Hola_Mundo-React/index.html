@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creando elementos con React</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script type="text/javascript">
+      /* Tu código React va aquí
+      No olvides que el elemento padre debe llamarse igual que el elemento que espera el render */
+
+      const create = React.createElement;
+      
+      const h2_element = create('h2', null, '¡Hola!');
+      const span_element = create('span', null, 'Mundo');
+      const p_element = create('p', null, ['Hola', span_element]);
+      const div_element = create('div', null, [h2_element, p_element]);
+
+      ReactDOM.render(div_element, document.getElementById("root"));
+    </script>
+  </body>
+</html>
