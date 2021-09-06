@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend III Ejercicio práctico clase 1</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script type="text/javascript">
+      /* Tu código React va aquí
+      No olvides que el elemento padre debe llamarse igual que el elemento que espera el render */
+
+      const create = React.createElement;
+
+      const h1_element = create("h1", { key: 1 }, "Con lo visto hasta ahora");
+      const h2_element = create("h2", { key: 2 }, "Replica este HTML");
+      const h3_element = create("h3", { key: 3 }, "Usando");
+      const h4_element = create("h4", { key: 4 }, "React.js");
+      const footer_element = create("footer", { key: 5 }, "Suerte!");
+      const div_element = create("div", { key: 6 }, [
+        h1_element,
+        h2_element,
+        h3_element,
+        h4_element,
+        footer_element,
+      ]);
+
+      ReactDOM.render(div_element, document.getElementById("root"));
+    </script>
+  </body>
+</html>
