@@ -22,10 +22,10 @@
 
       const create = React.createElement;
       
-      const h2_element = create('h2', null, '¡Hola!');
-      const span_element = create('span', null, 'Mundo');
-      const p_element = create('p', null, ['Hola', span_element]);
-      const div_element = create('div', null, [h2_element, p_element]);
+      const h2_element = create('h2', {key: 1}, '¡Hola!');
+      const span_element = create('span', {key: 2}, ' Mundo');
+      const p_element = create('p', {key: 3}, ['Hola', span_element]);
+      const div_element = create('div', {key: 4}, [h2_element, p_element]);
 
       ReactDOM.render(div_element, document.getElementById("root"));
     </script>
