@@ -1,0 +1,105 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'___________STYLES___________
+title UML - ATM
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+interface IServiceATM{
++procesarRetiro(dni: String, contraseña: String, montoARetirar: Integer)
+}
+
+class ServiceATM{
+-authenticationService: AuthenticationService
+-cuentaService: CuentaService
+-cajaService: CajaService
++ServiceATM(authenticationService: AuthenticationService, cuentaService: CuentaService, cajaService: CajaService)
++procesarRetiro(dni: String, contraseña: String, montoARetirar: Integer)
+}
+
+class AuthenticationService{
+-authenticationDatabases: List<AutenticationDatabase>
++AuthenticationService(authenticationDatabases: List<AuthenticationDatabase>)
++validarUsuarioYContraseña(dni: String, contraseña: String): Boolean
+}
+
+class CuentaService{
+-cuentas: List<Cuentas>
++CuentaService(cuentas: List<Cuentas>)
++getCuenta(dni: String): Cuenta
+}
+
+class CajaService{
++entregarDinero(c: Cuenta, montoARetirar: integer)
+}
+
+class Cuenta{
+-dni: String
+-saldoActual: Integer
++Cuenta(dni: String, saldoActual: Integer)
++getDNI(): String
++getSaldoActual(): integer
++setSaldoActual()
++toString()
+}
+
+class DineroATM{
+-dineroDisponible: Integer
++getDineroDisponible(): Integer
++setDineroDisponible()
++recargarDineroATM(dineroRecarga: Integer)
++toString()
+}
+
+class AutenticationDatabase{
+-dni: String
+-contraseña: String
++AuthenticationService(dni: String, contraseña: String)
++getDNI(): String
++getContraseña(): String
++setContraseña()
++toString()
+}
+
+object appCliente{
+}
+
+IServiceATM<|..ServiceATM
+ServiceATM --> AuthenticationService
+ServiceATM --> CuentaService
+ServiceATM --> CajaService
+appCliente.>IServiceATM
+CajaService..>DineroATM
+CuentaService..>Cuenta
+AuthenticationService..>AutenticationDatabase
+
+@enduml
