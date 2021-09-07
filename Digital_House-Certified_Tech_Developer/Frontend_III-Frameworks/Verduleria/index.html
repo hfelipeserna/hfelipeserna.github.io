@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Strock en verdulería</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* Tu código React va aquí
+                No olvides que el elemento padre debe llamarse igual que el elemento que espera el render */
+      const enStock = ["Manzana", "Pera", "Naranja", "Banana", "Kiwi"];
+      const faltantes = ["Durazno", "Cereza", "Anana"];
+
+      const En_Stock = () =>{
+          return (document.getElementById("root").innerHTML = (
+            <ul>
+                {enStock.map((producto,pos)=>(
+                    <li key={pos+1}>{producto}</li>
+                ))}
+            </ul>
+          ));
+      };
+
+      const Faltantes = () =>{
+          return (document.getElementById("root").innerHTML = (
+            <ul>
+                {faltantes.map((producto,pos)=>(
+                    <li key={pos+1}>{producto}</li>
+                ))}
+            </ul>
+          ));
+      };
+
+      const div_el = (
+        <div>
+          <h1> Lista de Productos en stock: </h1>
+          <En_Stock />
+          <h2> Productos faltantes: </h2>
+          <Faltantes />
+        </div>
+      );
+
+      ReactDOM.render(div_el, document.getElementById("root"));
+    </script>
+  </body>
+</html>
