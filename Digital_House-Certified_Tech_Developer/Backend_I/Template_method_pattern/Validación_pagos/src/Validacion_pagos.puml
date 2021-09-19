@@ -1,0 +1,96 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'___________STYLES___________
+title UML - Validación de pagos
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+abstract Tarjeta{
+numerosFrente: String
+codSeguridad: String
+fechaExpiración: Date
+tipo: Tipo
++Tarjeta(String numerosFrente, String codSeguridad, Date fechaExpiración, Tipo tipo)
++getNumerosFrente(): String
++setNumerosFrente()
++getCodSeguridad(): String
++setCodSeguridad()
++getFechaExpiración(): Date
++setFechaExpiración()
++getTipo(): Tipo
++setTipo()
++toString()
+}
+
+class TarjetaCredito{
+limite: Double
+saldoUtilizado: Double
++TarjetaCredito(String numerosFrente, String codSeguridad, Date fechaExpiración, Tipo tipo, Double limite, Double saldoUtilizado)
++getLimite(): Double
++setLimite()
+}
+
+class TarjetaDébito{
+saldoDisponible: Double
++TarjetaDébito(String numerosFrente, String codSeguridad, Date fechaExpiración, Tipo tipo, Double saldoDisponible)
++getSaldoDisponible(): Double
++setSaldoDisponible()
+}
+
+abstract PagoService{
++procesarPago(Tarjeta tarjeta, Double monto)
+#{abstract} autorizarPago(Tarjeta tarjeta, Double monto): Boolean
+}
+
+class ProcesadorCredito{
++autorizarPago(Tarjeta tarjeta, Double monto): Boolean
+}
+
+class ProcesadorDébito{
++autorizarPago(Tarjeta tarjeta, Double monto): Boolean
+}
+
+enum Tipo{
+DEBITO
+CREDITO
+}
+
+Tipo <. Tarjeta
+Tarjeta <|.. TarjetaCredito
+Tarjeta <|.. TarjetaDébito
+Tarjeta <..PagoService
+PagoService <|.. ProcesadorCredito
+PagoService <|.. ProcesadorDébito
+TarjetaCredito <.. ProcesadorCredito
+TarjetaDébito <.. ProcesadorDébito
+
+@enduml
