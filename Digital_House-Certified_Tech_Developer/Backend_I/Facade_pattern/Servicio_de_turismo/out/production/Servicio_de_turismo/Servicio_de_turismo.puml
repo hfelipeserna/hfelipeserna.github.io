@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'___________STYLES___________
+title UML - Servicio de turismo
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+object Cliente{
+}
+
+interface IServicioDeBúsqueda{
++buscar(String ciudadOrigen, String ciudadDestino, String fechaDesde, String fechaHasta)
+}
+
+class ServicioDeBúsqueda{
+-hotelesAPI: HotelesAPI
+-vuelosAPI: VuelosAPI
++ServicioDeBúsqueda()
++buscar(String ciudadOrigen, String ciudadDestino, String fechaDesde, String fechaHasta)
+}
+
+class HotelesAPI{
++buscarHoteles(String ciudad, String fechaDesde, String fechaHasta)
+}
+
+class VuelosAPI{
++buscarVuelos(String ciudadOrigen, String ciudadDestino, String fechaDesde, String fechaHasta)
+}
+
+Cliente ->IServicioDeBúsqueda
+IServicioDeBúsqueda <|.. ServicioDeBúsqueda
+ServicioDeBúsqueda --> HotelesAPI
+ServicioDeBúsqueda --> VuelosAPI
+
+@enduml
