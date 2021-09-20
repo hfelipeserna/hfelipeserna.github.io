@@ -33,6 +33,8 @@ skinparam note {
 
 '___________UML___________
 
+package model{
+
 abstract Empleado{
 -nombre: String
 - apellido: String
@@ -70,6 +72,10 @@ class EmpleadoEfectivo{
 +setPremios()
 }
 
+}
+
+package service{
+
 abstract CalculadorDeSueldo{
 +liquidarSueldo(Empleado empleado)
 #{abstract}calcularSueldo(Empleado empleado): double
@@ -87,12 +93,15 @@ class CalculadorDeSueldoEmpleadoEfectivo{
 +imprimirRecibo(Empleado empleado)
 }
 
+}
+
 Empleado <|-- EmpleadoContratado
 Empleado <|-- EmpleadoEfectivo
 
 CalculadorDeSueldo <|-- CalculadorDeSueldoEmpleadoContratado
 CalculadorDeSueldo <|-- CalculadorDeSueldoEmpleadoEfectivo
-Empleado <.. CalculadorDeSueldo
-EmpleadoContratado <.. CalculadorDeSueldoEmpleadoContratado
-EmpleadoEfectivo <.. CalculadorDeSueldoEmpleadoEfectivo
+
+service ..> model
+
+
 @enduml
