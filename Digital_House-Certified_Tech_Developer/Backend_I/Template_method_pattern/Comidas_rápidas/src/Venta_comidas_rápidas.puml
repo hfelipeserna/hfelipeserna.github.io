@@ -51,9 +51,20 @@ class MenúAdulto{
 }
 
 class MenúInfantil{
+-juguete: String
+-costoJuguete: double
++MenúInfantil(double precio, TipoDeMenu descripción, String juguete, double costoJuguete)
++getJuguete(): String
++setJuguete()
++getCostoJuguete(): double
++setCostoJuguete()
 }
 
 class MenúVegetariano{
+-costoPackaging: double
++MenúVegetariano(double precio, TipoDeMenu descripción, double costoPackaging)
++getCostoPackaging(): double
++setCostoPackaging()
 }
 
 enum TipoDeMenu{
@@ -73,19 +84,16 @@ abstract ProcesoDeMenú{
 }
 
 class ProcesoDeMenúAdulto{
-ProcesoDeMenúAdulto(Menú menú)
 +armar()
 +calcularPrecioDelMenú(): double
 }
 
 class ProcesoDeMenúInfantil{
-ProcesoDeMenúInfantil(Menú menú)
 +armar()
 +calcularPrecioDelMenú(): double
 }
 
 class ProcesoDeMenúVegetariano{
-ProcesoDeMenúVegetariano(Menú menú)
 +armar()
 +calcularPrecioDelMenú(): double
 }
@@ -94,7 +102,7 @@ ProcesoDeMenúVegetariano(Menú menú)
 
 TipoDeMenu <. Menú
 
-Menú <|-- MenúAdulto
+Menú <|- MenúAdulto
 Menú <|-- MenúInfantil
 Menú <|-- MenúVegetariano
 
