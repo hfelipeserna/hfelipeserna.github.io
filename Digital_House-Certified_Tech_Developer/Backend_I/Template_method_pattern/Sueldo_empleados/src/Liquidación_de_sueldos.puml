@@ -87,11 +87,11 @@ class CalculadorDeSueldoEmpleadoEfectivo{
 +imprimirRecibo(Empleado empleado)
 }
 
-Empleado <|.. EmpleadoContratado
-Empleado <|.. EmpleadoEfectivo
+Empleado <|-- EmpleadoContratado
+Empleado <|-- EmpleadoEfectivo
 
-CalculadorDeSueldo <|.. CalculadorDeSueldoEmpleadoContratado
-CalculadorDeSueldo <|.. CalculadorDeSueldoEmpleadoEfectivo
+CalculadorDeSueldo <|-- CalculadorDeSueldoEmpleadoContratado
+CalculadorDeSueldo <|-- CalculadorDeSueldoEmpleadoEfectivo
 Empleado <.. CalculadorDeSueldo
 EmpleadoContratado <.. CalculadorDeSueldoEmpleadoContratado
 EmpleadoEfectivo <.. CalculadorDeSueldoEmpleadoEfectivo
