@@ -85,11 +85,11 @@ CREDITO
 }
 
 Tipo <. Tarjeta
-Tarjeta <|.. TarjetaCredito
-Tarjeta <|.. TarjetaDébito
-Tarjeta <..PagoService
-PagoService <|.. ProcesadorCredito
-PagoService <|.. ProcesadorDébito
+Tarjeta <|-- TarjetaCredito
+Tarjeta <|-- TarjetaDébito
+Tarjeta <.. PagoService
+PagoService <|-- ProcesadorCredito
+PagoService <|-- ProcesadorDébito
 TarjetaCredito <.. ProcesadorCredito
 TarjetaDébito <.. ProcesadorDébito
 
