@@ -34,6 +34,8 @@ skinparam note {
 
 '___________UML___________
 
+package model{
+
 abstract Tarjeta{
 numerosFrente: String
 codSeguridad: String
@@ -66,6 +68,15 @@ saldoDisponible: Double
 +setSaldoDisponible()
 }
 
+enum Tipo{
+DEBITO
+CREDITO
+}
+
+}
+
+package service {
+
 abstract PagoService{
 +procesarPago(Tarjeta tarjeta, Double monto)
 #{abstract} autorizarPago(Tarjeta tarjeta, Double monto): Boolean
@@ -79,18 +90,16 @@ class ProcesadorDébito{
 +autorizarPago(Tarjeta tarjeta, Double monto): Boolean
 }
 
-enum Tipo{
-DEBITO
-CREDITO
 }
 
 Tipo <. Tarjeta
 Tarjeta <|-- TarjetaCredito
 Tarjeta <|-- TarjetaDébito
-Tarjeta <.. PagoService
+
 PagoService <|-- ProcesadorCredito
 PagoService <|-- ProcesadorDébito
-TarjetaCredito <.. ProcesadorCredito
-TarjetaDébito <.. ProcesadorDébito
+
+service ..> model
+
 
 @enduml
