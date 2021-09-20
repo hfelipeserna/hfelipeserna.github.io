@@ -110,7 +110,7 @@ ProcesoDeMenú <|-- ProcesoDeMenúAdulto
 ProcesoDeMenú <|-- ProcesoDeMenúInfantil
 ProcesoDeMenú <|-- ProcesoDeMenúVegetariano
 
-Menú <.. ProcesoDeMenú
+service ..> model
 
 
 @enduml
