@@ -1,0 +1,97 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'___________STYLES___________
+title UML - Validación de pagos
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+class Vendedor {
+-nombre: String
+-cantidadDeVentas: int
++Vendedor(String nombre, int cantidadDeVentas)
++vender()
+#{abstract}calcularPuntos(): int
++mostrarCategoria(): String
++recategorizar(): Categoria
++getNombre(): String
++setNombre()
++getCantidadDeVentas(): int
++setCantidadDeVentas()
+}
+
+class Empleado {
+-añosAntiguedad: int
+-afiliados: ArrayList<Vendedor>
+Empleado(String nombre, int cantidadDeVentas, int añosAntiguedad)
+-conseguirAfiliado(Vendedor afiliado)
+-calcularPuntos(): int
++getAñosAntiguedad(): int
++setAñosAntiguedad()
+}
+
+class Afiliado {
++Afiliado(String nombre, int cantidadDeVentas)
+-calcularPuntos(): int
+}
+
+class Pasante {
++Pasante(String nombre, int cantidadDeVentas)
+-calcularPuntos(): int
+}
+
+enum Categoria {
+NOVATO
+APRENDIZ
+BUENO
+MAESTRO
+PASANTE_NOVATO
+PASANTE_EXPERTO
+}
+
+enum Puntaje {
+NUEVO_AFILIADO(10)
+ANTIGUEDAD(5)
+VENTA_EMPLEADO(5)
+VENTA_AFILIADO(10)
+VENTA_PASANTE(5)
+-valor: int;
+#Puntaje(int v)
++getPuntos(): int
+}
+
+Vendedor <|-- Empleado
+Vendedor <|-- Afiliado
+Vendedor <|-- Pasante
+Vendedor .> Puntaje
+Categoria <. Vendedor
+
+@enduml

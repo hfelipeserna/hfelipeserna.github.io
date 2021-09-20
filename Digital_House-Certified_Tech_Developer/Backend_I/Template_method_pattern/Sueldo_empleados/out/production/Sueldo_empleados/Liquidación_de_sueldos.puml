@@ -1,0 +1,98 @@
+@startuml
+'https://plantuml.com/class-diagram
+'___________STYLES___________
+title UML - Liquidación de sueldos de empleados
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+abstract Empleado{
+-nombre: String
+- apellido: String
+-cuentaBancaria: String
++Empleado(String nombre, String apellidos, String cuentaBancaria)
++getNombre(): String
++setNombre()
++getApellido(): String
++setApellido()
++getCuentaBancaria(): String
++setCuentaBancaria()
++toString()
+}
+
+class EmpleadoContratado{
+-cantidadHorasTrabajadas: int
+-valorPorHora: double
++EmpleadoContratado(String nombre, String apellidos, String cuentaBancaria, int cantidadHorasTrabajadas, double valorPorHora)
++getCantidadHorasTrabajadas(): int
++setCantidadHorasTrabajadas()
++getValorPorHora(): double
++setValorPorHora()
+}
+
+class EmpleadoEfectivo{
+-sueldoBásico: double
+-descuentos: double
+-premios: double
++EmpleadoEfectivo(String nombre, String apellidos, String cuentaBancaria, double sueldoBásico, double descuentos, double premios)
++getSueldoBásico(): double
++setSueldoBásico()
++getDescuentos(): double
++setDescuentos()
++getPremios(): double
++setPremios()
+}
+
+abstract CalculadorDeSueldo{
++liquidarSueldo(Empleado empleado)
+#{abstract}calcularSueldo(Empleado empleado): double
+#{abstract}imprimirRecibo(Empleado empleado, double sueldoCalculado)
++depositar(String cuentaBancaria, double sueldoCalculado)
+}
+
+class CalculadorDeSueldoEmpleadoContratado{
++calcularSueldo(Empleado empleado): double
++imprimirRecibo(Empleado empleado)
+}
+
+class CalculadorDeSueldoEmpleadoEfectivo{
++calcularSueldo(Empleado empleado): double
++imprimirRecibo(Empleado empleado)
+}
+
+Empleado <|.. EmpleadoContratado
+Empleado <|.. EmpleadoEfectivo
+
+CalculadorDeSueldo <|.. CalculadorDeSueldoEmpleadoContratado
+CalculadorDeSueldo <|.. CalculadorDeSueldoEmpleadoEfectivo
+Empleado <.. CalculadorDeSueldo
+EmpleadoContratado <.. CalculadorDeSueldoEmpleadoContratado
+EmpleadoEfectivo <.. CalculadorDeSueldoEmpleadoEfectivo
+@enduml

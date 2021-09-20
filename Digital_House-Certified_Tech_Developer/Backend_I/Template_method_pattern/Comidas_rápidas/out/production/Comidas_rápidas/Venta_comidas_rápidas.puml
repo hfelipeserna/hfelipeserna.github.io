@@ -1,0 +1,116 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'___________STYLES___________
+title UML - Venta de comidas rápidas
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+package model{
+
+abstract Menú{
+-precio: double
+-descripción: TipoDeMenu
++Menú(double precio, TipoDeMenu descripción)
++getDescripción(): TipoDeMenu
++setDescripción()
++getPrecio(): double
++setPrecio()
+}
+
+class MenúAdulto{
++MenúAdulto(double precio, TipoDeMenu descripción)
+}
+
+class MenúInfantil{
+-juguete: String
+-costoJuguete: double
++MenúInfantil(double precio, TipoDeMenu descripción, String juguete, double costoJuguete)
++getJuguete(): String
++setJuguete()
++getCostoJuguete(): double
++setCostoJuguete()
+}
+
+class MenúVegetariano{
+-costoPackaging: double
++MenúVegetariano(double precio, TipoDeMenu descripción, double costoPackaging)
++getCostoPackaging(): double
++setCostoPackaging()
+}
+
+enum TipoDeMenu{
+ADULTO
+INFANTIL
+VEGETARIANO
+}
+}
+
+package service{
+
+abstract ProcesoDeMenú{
++ProcesoDeMenu(Menú menú)
++preparar(): double
+#{abstract}armar()
+#{abstract}calcularPrecioDelMenú(): double
+}
+
+class ProcesoDeMenúAdulto{
++armar()
++calcularPrecioDelMenú(): double
+}
+
+class ProcesoDeMenúInfantil{
++armar()
++calcularPrecioDelMenú(): double
+}
+
+class ProcesoDeMenúVegetariano{
++armar()
++calcularPrecioDelMenú(): double
+}
+
+}
+
+TipoDeMenu <. Menú
+
+Menú <|- MenúAdulto
+Menú <|-- MenúInfantil
+Menú <|-- MenúVegetariano
+
+ProcesoDeMenú <|-- ProcesoDeMenúAdulto
+ProcesoDeMenú <|-- ProcesoDeMenúInfantil
+ProcesoDeMenú <|-- ProcesoDeMenúVegetariano
+
+Menú <.. ProcesoDeMenú
+
+
+@enduml
