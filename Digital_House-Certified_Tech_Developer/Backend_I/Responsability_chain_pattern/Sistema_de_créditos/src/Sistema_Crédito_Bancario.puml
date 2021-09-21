@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+'___________STYLES___________
+title UML - Sistema para el área de créditos de un banco
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+abstract EmpleadoBanco {
+- siguienteEmpleadoBanco:  EmpleadoBanco
+- cargo: String
++{abstract}procesarSolicitud(Integer monto)
++getSiguienteEmpleadoBanco(): EmpleadoBanco
++setSiguienteEmpleadoBanco(EmpleadoBanco siguienteEmpleadoBanco)
++getCargo(): String
++setCargo()
+}
+
+class EjecutivoDeCuenta {
++procesarSolicitud(Integer monto)
+}
+
+class Director {
++procesarSolicitud(Integer monto)
+}
+
+class Gerente {
++procesarSolicitud(Integer monto)
+}
+
+class CadenaDeManejadores {
+-manejadorInicial: EmpleadoBanco
++CadenaDeManejadores()
+}
+
+EmpleadoBanco <- EmpleadoBanco
+EmpleadoBanco <|-- EjecutivoDeCuenta
+EmpleadoBanco <|-- Gerente
+EmpleadoBanco <|-- Director
+CadenaDeManejadores .> EmpleadoBanco
+
+@enduml
