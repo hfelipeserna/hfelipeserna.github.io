@@ -34,7 +34,7 @@ skinparam note {
 '___________UML___________
 
 abstract EmpleadoBanco {
-- siguienteEmpleadoBanco:  EmpleadoBanco
+- siguienteEmpleadoBanco: EmpleadoBanco
 - cargo: String
 +{abstract}procesarSolicitud(Integer monto)
 +getSiguienteEmpleadoBanco(): EmpleadoBanco
