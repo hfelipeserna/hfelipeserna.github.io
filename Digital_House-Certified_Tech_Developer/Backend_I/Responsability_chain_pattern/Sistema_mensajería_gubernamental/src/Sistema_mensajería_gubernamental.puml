@@ -40,7 +40,7 @@ SECRETO(2)
 MUY_SECRETO(3)
 -nivelDeAcceso: int
 -TipoDeDocumento(int nivel)
-+getNivelDeAcceso: int
++getNivelDeAcceso(): int
 }
 
 class Documento {
@@ -58,10 +58,34 @@ class Documento {
 package service {
 abstract FuncionarioPublico {
 - siguienteFuncionarioPublico: FuncionarioPublico
+- tipoDeAutorización: TipoDeDocumento
++{abstract}leerDocumento(Documento documento)
++getSiguienteFuncionarioPublico(): FuncionarioPublico
++setSiguienteFuncionarioPublico(FuncionarioPublico siguienteFuncionarioPublico)
++getTipoDeAutirización(): TipoDeDocumento
++setTipoDeAutorización(TipoDeDocumento tipoDeAutorización)
+}
+
+class Diputado {
++Diputado(Tipo autorización)
++leerDocumento(Documento documento)
+}
+
+class Ministro {
++Ministro(Tipo autorización)
++leerDocumento(Documento documento)
+}
+
+class Presidente {
++Presidente(Tipo autorización)
++leerDocumento(Documento documento)
 }
 }
 
-service ..> model
+model <.. service
 Documento *- TipoDeDocumento
+FuncionarioPublico <|-- Diputado
+FuncionarioPublico <|-- Ministro
+FuncionarioPublico <|-- Presidente
 
 @enduml

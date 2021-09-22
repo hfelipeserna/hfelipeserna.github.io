@@ -1,11 +1,12 @@
-package service;
+package service.Implementation;
+import service.EmpleadoBanco;
 
-public class Gerente extends EmpleadoBanco{
+public class Director extends EmpleadoBanco {
 
     @Override
     public void procesarSolicitud(Integer monto) {
-        this.setCargo("GERENTE");
-        if(monto >= 60000 && monto < 200000)
+        this.setCargo("DIRECTOR");
+        if(monto >= 200000)
             System.out.println(this.getCargo() + ": yo me encargo.");
         else if(this.getSiguienteEmpleadoBanco() != null)
             this.getSiguienteEmpleadoBanco().procesarSolicitud(monto);
