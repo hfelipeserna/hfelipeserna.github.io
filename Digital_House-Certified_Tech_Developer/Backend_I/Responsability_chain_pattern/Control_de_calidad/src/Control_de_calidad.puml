@@ -1,0 +1,77 @@
+@startuml
+'https://plantuml.com/class-diagram
+'___________STYLES___________
+title UML - Sistema para el control de calidad
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+package model {
+class Articulo {
+- nombre: String
+- lote: int
+- peso: int
+- envasado: String
++ Articulo(String nombre, int lote, int peso, String envasado)
++ getNombre(): String
++ setNombre(String nombre)
++ getLote(): int
++ setLote(int lote)
++ getPeso(): int
++ setPeso(int peso)
++ getEnvasado(): String
++ setEnvasado(String envasado)
++ toString()
+}
+}
+
+package service {
+abstract ManejadorDeCalidad {
+- nombre: String
+- manejadorCalidadSiguiente: ManejadorDeCalidad
+}
+
+class ManejadorDeCalidadPorLote {
+}
+
+class ManejadorDeCalidadPorPeso {
+}
+
+class ManejadorDeCalidadPorEnvasado {
+}
+}
+
+model <.. service
+ManejadorDeCalidad <- ManejadorDeCalidad
+ManejadorDeCalidad <|-- ManejadorDeCalidadPorLote
+ManejadorDeCalidad <|-- ManejadorDeCalidadPorPeso
+ManejadorDeCalidad <|-- ManejadorDeCalidadPorEnvasado
+
+@enduml

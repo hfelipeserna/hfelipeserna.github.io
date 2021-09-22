@@ -91,6 +91,7 @@ class CadenaDeManejadores {
 
 model <.. service
 Documento *- TipoDeDocumento
+FuncionarioPublico <- FuncionarioPublico
 FuncionarioPublico <|-- Diputado
 FuncionarioPublico <|-- Ministro
 FuncionarioPublico <|-- Presidente
