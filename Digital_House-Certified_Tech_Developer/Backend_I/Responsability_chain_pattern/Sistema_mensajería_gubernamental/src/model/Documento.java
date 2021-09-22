@@ -3,9 +3,9 @@ package model;
 public class Documento {
 
     private String contenido;
-    private int tipo;
+    private TipoDeDocumento tipo;
 
-    public Documento(String contenido, int tipo) {
+    public Documento(String contenido, TipoDeDocumento tipo) {
         this.contenido = contenido;
         this.tipo = tipo;
     }
@@ -18,11 +18,11 @@ public class Documento {
         this.contenido = contenido;
     }
 
-    public int getTipo() {
+    public TipoDeDocumento getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(TipoDeDocumento tipo) {
         this.tipo = tipo;
     }
 

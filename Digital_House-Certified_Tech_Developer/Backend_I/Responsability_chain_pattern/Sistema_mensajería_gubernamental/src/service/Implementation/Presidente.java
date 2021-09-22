@@ -11,10 +11,11 @@ public class Presidente extends FuncionarioPublico {
 
     @Override
     public void leerDocumento(Documento documento) {
-        if(this.getTipoDeAutorizacion().getNivelDeAcceso() >=documento.getTipo()){
+        if(this.getTipoDeAutorizacion().getNivelDeAcceso() >= documento.getTipo().getNivelDeAcceso()){
             System.out.println("Presidente accediendo al documento: " + documento.toString());
             System.out.println("\tMensaje: " + documento.getContenido());
-        }else if(this.getSiguienteFuncionarioPublico() != null)
+        }
+        if(this.getSiguienteFuncionarioPublico() != null)
             this.getSiguienteFuncionarioPublico().leerDocumento(documento);
     }
 }

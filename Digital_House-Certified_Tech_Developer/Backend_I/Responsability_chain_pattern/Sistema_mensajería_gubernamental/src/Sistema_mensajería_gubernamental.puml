@@ -45,11 +45,11 @@ MUY_SECRETO(3)
 
 class Documento {
 -contenido: String
--tipo: int
-+Documento(String contenido, int tipo)
+-tipo: TipoDeDocumento
++Documento(String contenido, TipoDeDocumento tipo)
 +getContenido(): String
 +setContenido()
-+getTipo(): int
++getTipo(): TipoDeDocumento
 +setTipo()
 +toString()
 }
@@ -84,6 +84,8 @@ class Presidente {
 class CadenaDeManejadores {
 -manejadorInicial: FuncionarioPublico
 +CadenaDeManejadores()
++getManejadorInicial(): FuncionarioPublico
++setManejadorInicial(FuncionarioPublico manejadorInicial)
 }
 }
 

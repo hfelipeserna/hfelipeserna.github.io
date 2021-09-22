@@ -16,5 +16,18 @@ public class CadenaDeManejadores {
                 "Diputado", new Diputado(TipoDeDocumento.RESERVADO),
                 "Ministro", new Ministro(TipoDeDocumento.SECRETO),
                 "Presidente", new Presidente(TipoDeDocumento.MUY_SECRETO));
+
+        setManejadorInicial(funcionarios.get("Diputado"));
+        // Se arma la cadena de responsabilidad
+        funcionarios.get("Diputado").setSiguienteFuncionarioPublico(funcionarios.get("Ministro"));
+        funcionarios.get("Ministro").setSiguienteFuncionarioPublico(funcionarios.get("Presidente"));
+    }
+
+    public FuncionarioPublico getManejadorInicial() {
+        return manejadorInicial;
+    }
+
+    public void setManejadorInicial(FuncionarioPublico manejadorInicial) {
+        this.manejadorInicial = manejadorInicial;
     }
 }
