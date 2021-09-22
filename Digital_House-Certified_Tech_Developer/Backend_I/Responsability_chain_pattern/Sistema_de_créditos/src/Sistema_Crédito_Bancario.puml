@@ -58,6 +58,8 @@ class Gerente {
 class CadenaDeManejadores {
 -manejadorInicial: EmpleadoBanco
 +CadenaDeManejadores()
++getManejadorInicial(): EmpleadoBanco
++setManejadorInicial(EmpleadoBanco manejadorInicial)
 }
 
 EmpleadoBanco <- EmpleadoBanco

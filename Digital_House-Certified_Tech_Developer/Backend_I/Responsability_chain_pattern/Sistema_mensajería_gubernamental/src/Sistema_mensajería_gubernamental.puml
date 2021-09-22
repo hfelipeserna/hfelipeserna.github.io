@@ -80,6 +80,11 @@ class Presidente {
 +Presidente(Tipo autorización)
 +leerDocumento(Documento documento)
 }
+
+class CadenaDeManejadores {
+-manejadorInicial: FuncionarioPublico
++CadenaDeManejadores()
+}
 }
 
 model <.. service
@@ -87,5 +92,6 @@ Documento *- TipoDeDocumento
 FuncionarioPublico <|-- Diputado
 FuncionarioPublico <|-- Ministro
 FuncionarioPublico <|-- Presidente
+CadenaDeManejadores .> FuncionarioPublico
 
 @enduml
