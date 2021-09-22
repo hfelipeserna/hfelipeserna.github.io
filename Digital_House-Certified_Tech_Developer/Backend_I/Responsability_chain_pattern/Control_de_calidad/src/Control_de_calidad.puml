@@ -50,26 +50,58 @@ class Articulo {
 + setEnvasado(String envasado)
 + toString()
 }
+
+enum Parametro {
+LOTE(1000, 2000)
+PESO(1200, 1300)
+- int limiteInferior
+- int limiteSuperior
++ Parametro(int limiteInferior, int limiteSuperior)
++ getLimiteInferior(): int
++ getLimiteSuperior(): int
+}
 }
 
 package service {
 abstract ManejadorDeCalidad {
 - nombre: String
 - manejadorCalidadSiguiente: ManejadorDeCalidad
++ ManejadorDeCalidad(String nombre)
++ {abstract}comprobarCalidad(Articulo articulo): String
++ getNombre(): String
++ setNombre(String nombre)
++ getManejadorCalidadSiguiente(): ManejadorDeCalidad
++ setManejadorCalidadSiguiente(ManejadorDeCalidad manejadorCalidadSiguiente)
 }
 
 class ManejadorDeCalidadPorLote {
++ ManejadorDeCalidadPorLote(String nombre)
++ comprobarCalidad(Articulo articulo))
 }
 
 class ManejadorDeCalidadPorPeso {
++ ManejadorDeCalidadPorLote(String nombre)
++ comprobarCalidad(Articulo articulo))
 }
 
 class ManejadorDeCalidadPorEnvasado {
++ ManejadorDeCalidadPorLote(String nombre)
++ comprobarCalidad(Articulo articulo))
 }
+
+class CadenaDeManejadores {
+- manejadorBase: ManejadorDeCalidad
++ CadenaDeManejadores()
++ getManejadorBase(): ManejadorDeCalidad
++ setManejadorBase(ManejadorDeCalidad manejadorBase)
+}
+
 }
 
 model <.. service
+Articulo .> Parametro
 ManejadorDeCalidad <- ManejadorDeCalidad
+CadenaDeManejadores .> ManejadorDeCalidad
 ManejadorDeCalidad <|-- ManejadorDeCalidadPorLote
 ManejadorDeCalidad <|-- ManejadorDeCalidadPorPeso
 ManejadorDeCalidad <|-- ManejadorDeCalidadPorEnvasado
