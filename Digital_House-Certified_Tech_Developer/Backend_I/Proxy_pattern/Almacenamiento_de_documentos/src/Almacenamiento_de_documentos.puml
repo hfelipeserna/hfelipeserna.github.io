@@ -1,0 +1,79 @@
+@startuml
+'https://plantuml.com/class-diagram
+'___________STYLES___________
+title UML - Sistema para almacenamiento de documentos (Google  Drive)
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+package model {
+class Documento {
+-id: String
+-url: String
+-contenido: String
+-usuariosAutorizados: List<String>
++Documento(String id, String url, String contenido, List<String> usuariosAutorizados)
++getId(): String
++setId(String id)
++getUrl(): String
++setUrl(String url)
++getContenido(): String
++setContenido(String contenido)
++getUsuariosAutorizados(): List<String>
++setUsuariosAutorizados(List<String> usuariosAutorizados)
+}
+}
+
+package service {
+interface IDocumentoService {
++buscarDocumento(String url, String email): Documento
+}
+
+class DocumentoService {
+-documentos: List<Documento>
++DocumentoService(List<Documento> documentos)
++buscarDocumento(String url, String email): Documento
+}
+
+class ProxyDocumentoService {
+-documentoService: IDocumentoService
+-registroUsuarios: List<Map<String, String>>
++ProxyDocumentoService(IDocumentoService documentoService)
++buscarDocumento(String url, String email): Documento
++createSingletonMap(String key, String value): Map<String, String>
+}
+}
+
+service ..> model
+IDocumentoService <|.. DocumentoService
+IDocumentoService <|.. ProxyDocumentoService
+ProxyDocumentoService -> DocumentoService
+
+@enduml
