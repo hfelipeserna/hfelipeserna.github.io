@@ -1,6 +1,5 @@
 import service.IServicioDeVacunacion;
 import service.implementation.ProxyServicioDeVacunacion;
-
 import java.time.LocalDate;
 
 public class Main {
