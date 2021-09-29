@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+'___________STYLES___________
+title UML - Sistema para control de acceso a paginas web
+skinparam classAttributeIconSize 0
+skinparam backgroundColor White
+skinparam RoundCorner 10
+skinparam Shadowing true
+
+skinparam class {
+    ArrowColor Black
+    BackgroundColor White
+    HeaderBackgroundColor Gray
+    BorderColor Black
+    FontColor White
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam object{
+    ArrowColor Black
+    BackgroundColor White
+    BorderColor Black
+    FontColor Black
+    FontSize 14
+    AttributeFontSize 12
+}
+
+skinparam note {
+    BackgroundColor LightYellow
+    BorderColor Black
+}
+
+'___________UML___________
+
+object cliente {
+}
+
+interface IConexiónInternet {
++ conectarCon(String url)
+}
+
+class InternetService {
++ conectarCon(String url)
+}
+
+class ProxyInternet {
+- internetService: InternetService
+- sitiosBloqueados: List<String>
++ ProxyInternet(List<String> sitiosBloqueados, InternetService internetService)
++ conectarCon(String url))
+}
+
+cliente .> IConexiónInternet
+IConexiónInternet <|.. InternetService
+IConexiónInternet <|.. ProxyInternet
+ProxyInternet -> InternetService
+
+@enduml
