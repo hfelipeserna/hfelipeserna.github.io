@@ -1,2 +1,11 @@
-package org.proprietary.dental_clinic.Dental_clinic.controller;public class AppointmentController {
+package org.proprietary.dental_clinic.Dental_clinic.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/Appoinments")
+public class AppointmentController {
+
+
 }
